@@ -1,20 +1,13 @@
 # crud-produtos
 
-# Produto Controller
+Este projeto possui uma implementação simples de CRUD em java seguindo os padrões de orientação a objetos e boas práticas no desenvolvimento de API RESTful. Nele, podemos realizar operações de CRUD em um produto com os seguintes atributos:
+- **nome**
+- **valor**
+- **descricao**
+- **quantidade_estoque**
+- **peso**
 
-Este é o controlador responsável por lidar com as requisições relacionadas aos produtos da aplicação.
-
-## Tecnologias Utilizadas
-
-- **Java 17**
-- **Spring Boot**
-- **PostgreSQL e PgAdmin 4**
-- **Maven**
-- **Hibernate e JPA**
-- **Hateoas**
-- **Lombok**
-- **Mockito**
-- **OpenCsv**
+Além disso, caso possua um CSV com o formato de exemplo abaixo, pode utilizar a rota /upload para inserir produtos em lote. [Cliquei para ver](#Processa-o-upload-de-um-arquivo-CSV-de-produtos)
 
 ## Configuração do Banco de Dados PostgreSQL
 
