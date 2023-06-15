@@ -1,6 +1,7 @@
 package com.produtos.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ import java.util.UUID;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProdutoModel extends RepresentationModel<ProdutoModel> {
+public class ProdutoModel extends RepresentationModel<ProdutoModel> implements Comparable<ProdutoModel> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,8 +30,8 @@ public class ProdutoModel extends RepresentationModel<ProdutoModel> {
 
     private String peso;
 
-    public static ProdutoModel criarProdutoModel() {
-        return new ProdutoModel();
+    @Override
+    public int compareTo(@NotNull ProdutoModel produto) {
+        return this.nome.compareTo(produto.getNome());
     }
-
 }

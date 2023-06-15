@@ -17,10 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.InvocationTargetException;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
@@ -58,6 +55,7 @@ public class ProdutoService {
                 UUID idProduto = produto.getId();
                 produto.add(linkTo(methodOn(ProdutoController.class).getProduto(idProduto)).withSelfRel());
             }
+            Collections.sort(listaProdutos);
             return listaProdutos;
         } catch (Exception e) {
             logger.error("Falha ao obter a lista de produtos", e);
